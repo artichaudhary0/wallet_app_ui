@@ -5,7 +5,7 @@ class ButtonTile extends StatelessWidget {
       : super(key: key);
 
   final String text;
-  final Image image;
+  final String image;
 
   @override
   Widget build(BuildContext context) {
@@ -20,20 +20,32 @@ class ButtonTile extends StatelessWidget {
               children: [
                 Container(
                   height: 90,
-                  padding: const EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(20),
-                      boxShadow: [
-                        BoxShadow(
-                            color: Colors.grey.shade400,
-                            blurRadius: 40,
-                            spreadRadius: 10)
-                      ]),
-                  child: Center(child: image),
+                    border: Border.all(color: Colors.blue.shade50),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Colors.white,
+                        spreadRadius: 10,
+                      )
+                    ],
+                  ),
+                  child: Container(
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.blue.shade50),
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(12),
+                        boxShadow: const [
+                          BoxShadow(color: Colors.white, spreadRadius: 10)
+                        ],
+                      ),
+                      child: Center(child: Image.asset(image))),
                 ),
                 const SizedBox(
-                  height: 5,
+                  height: 20,
                 ),
                 Text(
                   text,
@@ -50,5 +62,3 @@ class ButtonTile extends StatelessWidget {
     );
   }
 }
-
-
